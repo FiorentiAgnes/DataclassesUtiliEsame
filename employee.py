@@ -1,0 +1,28 @@
+import datetime
+from dataclasses import dataclass
+
+
+@dataclass
+class Employee:
+    EmployeeId: int
+    LastName: str
+    FirstName: str
+    Title: str
+    ReportsTo: int
+    BirthDate: datetime
+    HireDate: datetime
+    Address: str
+    City: str
+    State: str
+    Country: str
+    PostalCode: str
+    Phone: str
+    Fax: str
+    Email: str
+
+    def __str__(self):
+        return f"""EmployeeId: {self.EmployeeId}, LastName: {self.LastName}, Title: {self.Title} """
+    def __eq__(self, other):
+        return self.EmployeeId == other.EmployeeId
+    def __hash__(self):
+        return hash(self.EmployeeId)
